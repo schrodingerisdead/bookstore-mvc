@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB935E-4A47-4E1B-B71D-3A24B1862587}|BookStore.csproj|c:\\users\\magdalena\\onedrive\\desktop\\thebookstore\\bookstore\\controllers\\userbookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB935E-4A47-4E1B-B71D-3A24B1862587}|BookStore.csproj|solutionrelative:controllers\\userbookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB935E-4A47-4E1B-B71D-3A24B1862587}|BookStore.csproj|c:\\users\\magdalena\\onedrive\\desktop\\thebookstore\\bookstore\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB935E-4A47-4E1B-B71D-3A24B1862587}|BookStore.csproj|solutionrelative:controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB935E-4A47-4E1B-B71D-3A24B1862587}|BookStore.csproj|c:\\users\\magdalena\\onedrive\\desktop\\thebookstore\\bookstore\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB935E-4A47-4E1B-B71D-3A24B1862587}|BookStore.csproj|solutionrelative:controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB935E-4A47-4E1B-B71D-3A24B1862587}|BookStore.csproj|c:\\users\\magdalena\\onedrive\\desktop\\thebookstore\\bookstore\\controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB935E-4A47-4E1B-B71D-3A24B1862587}|BookStore.csproj|solutionrelative:controllers\\genrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB935E-4A47-4E1B-B71D-3A24B1862587}|BookStore.csproj|c:\\users\\magdalena\\onedrive\\desktop\\thebookstore\\bookstore\\controllers\\bookgenrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB935E-4A47-4E1B-B71D-3A24B1862587}|BookStore.csproj|solutionrelative:controllers\\bookgenrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFCB935E-4A47-4E1B-B71D-3A24B1862587}|BookStore.csproj|c:\\users\\magdalena\\onedrive\\desktop\\thebookstore\\bookstore\\data\\bookstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFCB935E-4A47-4E1B-B71D-3A24B1862587}|BookStore.csproj|solutionrelative:data\\bookstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReviewsController.cs",
+              "DocumentMoniker": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\Controllers\\ReviewsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReviewsController.cs",
+              "ToolTip": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\Controllers\\ReviewsController.cs",
+              "RelativeToolTip": "Controllers\\ReviewsController.cs",
+              "ViewState": "AQIAAKIAAAAAAAAAAAAAAKQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T18:06:26.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserBooksController.cs",
+              "DocumentMoniker": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\Controllers\\UserBooksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserBooksController.cs",
+              "ToolTip": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\Controllers\\UserBooksController.cs",
+              "RelativeToolTip": "Controllers\\UserBooksController.cs",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAQwKQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T18:05:37.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GenresController.cs",
+              "DocumentMoniker": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\Controllers\\GenresController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GenresController.cs",
+              "ToolTip": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\Controllers\\GenresController.cs",
+              "RelativeToolTip": "Controllers\\GenresController.cs",
+              "ViewState": "AQIAAI8AAAAAAAAAAAAQwJ0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T18:04:41.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookGenresController.cs",
+              "DocumentMoniker": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\Controllers\\BookGenresController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookGenresController.cs",
+              "ToolTip": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\Controllers\\BookGenresController.cs",
+              "RelativeToolTip": "Controllers\\BookGenresController.cs",
+              "ViewState": "AQIAAKEAAAAAAAAAAAAAAKoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T18:03:43.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthorsController.cs",
+              "DocumentMoniker": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\Controllers\\AuthorsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthorsController.cs",
+              "ToolTip": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\Controllers\\AuthorsController.cs",
+              "RelativeToolTip": "Controllers\\AuthorsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T17:45:47.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookStoreContext.cs",
+              "DocumentMoniker": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\Data\\BookStoreContext.cs",
+              "RelativeDocumentMoniker": "Data\\BookStoreContext.cs",
+              "ToolTip": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\Data\\BookStoreContext.cs",
+              "RelativeToolTip": "Data\\BookStoreContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAqwBgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T17:26:17.611Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
