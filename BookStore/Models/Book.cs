@@ -25,12 +25,12 @@ namespace BookStore.Models
 
         // Navigation properties
         [Required]
-        public int AuthorId { get; set; }
+        public int? AuthorId { get; set; }
         [Required]
-        public Author Author { get; set; }
+        public Author? Author { get; set; }
 
-        public ICollection<UserBooks> UserBooks { get; set; }
-        public ICollection<Review> Reviews { get; set; }
-        public ICollection<BookGenre> BookGenres { get; set; }
+        public ICollection<UserBooks>? UserBooks { get; set; }
+        public ICollection<Review>? Reviews { get; set; }
+        public ICollection<BookGenre>? BookGenres { get; set; }
     }
 }

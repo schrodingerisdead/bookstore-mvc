@@ -18,12 +18,34 @@ namespace BookStore.Controllers
         {
             _context = context;
         }
-
         // GET: Books
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string titleSearch, string authorSearch, string genreSearch)
         {
-            var bookStoreContext = _context.Book.Include(b => b.Author);
-            return View(await bookStoreContext.ToListAsync());
+            var query = _context.Book.Include(b => b.Author).Include(b => b.BookGenres).ThenInclude(bg => bg.Genre);
+
+            // Apply filters
+            if (!string.IsNullOrEmpty(titleSearch))
+            {
+                query = (Microsoft.EntityFrameworkCore.Query.IIncludableQueryable<Book, Genre>)query.Where(b => b.Title.Contains(titleSearch));
+            }
+            if (!string.IsNullOrEmpty(authorSearch))
+            {
+                query = (Microsoft.EntityFrameworkCore.Query.IIncludableQueryable<Book, Genre>)query.Where(b => b.Author.FirstName.Contains(authorSearch) || b.Author.LastName.Contains(authorSearch));
+            }
+            if (!string.IsNullOrEmpty(genreSearch))
+            {
+                query = (Microsoft.EntityFrameworkCore.Query.IIncludableQueryable<Book, Genre>)query.Where(b => b.BookGenres.Any(bg => bg.Genre.Name.Contains(genreSearch)));
+            }
+
+            // Execute query
+            var books = await query.ToListAsync();
+
+            // Pass current filter values to view
+            ViewBag.TitleSearch = titleSearch;
+            ViewBag.AuthorSearch = authorSearch;
+            ViewBag.GenreSearch = genreSearch;
+
+            return View(books);
         }
 
         // GET: Books/Details/5
@@ -55,16 +77,46 @@ namespace BookStore.Controllers
         // POST: Books/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+/*        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,YearPublished,NumPages,Description,Publisher,FrontPage,DownloadUrl,AuthorId")] Book book)
         {
+         
             if (ModelState.IsValid)
             {
                 _context.Add(book);
                 await _context.SaveChangesAsync();
+                Console.WriteLine("Book created successfully.");
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AuthorId"] = new SelectList(_context.Set<Author>(), "Id", "Id", book.AuthorId);
+            return View(book);
+
+
+        }*/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Title,YearPublished,NumPages,Description,Publisher,FrontPage,DownloadUrl,AuthorId")] Book book)
+        {
+            var errors = ModelState
+             .Where(x => x.Value.Errors.Count > 0)
+             .Select(x => new { x.Key, x.Value.Errors })
+             .ToArray();
+            if (ModelState.IsValid)
+            {
+                if (book.AuthorId == null)
+                {
+                    ModelState.AddModelError("AuthorId", "Please select an author.");
+                    ViewData["AuthorId"] = new SelectList(_context.Set<Author>(), "Id", "Id", book.AuthorId);
+                    return View(book);
+                }
+
+                _context.Add(book);
+                await _context.SaveChangesAsync();
+                Console.WriteLine("Book created successfully.");
+                return RedirectToAction(nameof(Index));
+            }
+
             ViewData["AuthorId"] = new SelectList(_context.Set<Author>(), "Id", "Id", book.AuthorId);
             return View(book);
         }

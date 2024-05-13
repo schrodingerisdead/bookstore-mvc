@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q6SAxqcCqQ+uDyDnbD2WVbWqJ5DBcbH7u+qNyJ+cn87kjxGxNI7BpTNV5efUaVtxLW2OM8uZtgHPFIaJkf/gbw==",
+  "dgSpecHash": "hEXGE87QoVsn/HrnaH44I/xDsWinl56mjELDu9v7w1WBRcllM3EjzDfUFKjbIgZawaCBzhdRx75L7omcnFrE/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\BookStore\\BookStore.csproj",
+  "projectFilePath": "C:\\Users\\Magdalena\\OneDrive\\Desktop\\TheBookStore\\bookstore-mvc\\BookStore\\BookStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Magdalena\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Magdalena\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
