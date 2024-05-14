@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BookStore.Models.Review>
+
+@{
+    ViewData["Title"] = "Reviews";
+}
+
+<h1>Reviews</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@foreach (var item in Model)
+{
+    <div class="card">
+        <div class="card-header">
+            <h4>
+                @Html.DisplayFor(modelItem => item.AppUser)
+            </h4>
+            <h5>Book: @Html.DisplayFor(modelItem => item.Book.Title)</h5>
+            <h5>Rating: @Html.DisplayFor(modelItem => item.Rating)</h5>
+        </div>
+        <p class="card-body">@Html.DisplayFor(modelItem => item.Comment)</p>
+        <div class="card-footer">
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </div>
+    </div>
+    <br>
+
+}
+</div>

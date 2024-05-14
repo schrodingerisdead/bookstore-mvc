@@ -1,0 +1,93 @@
+﻿@model BookStore.ViewModels.BookGenreViewModel
+
+@{
+    ViewData["Title"] = "My Books";
+}
+@if (@ViewBag.Message != null) {
+    <h5 class="alert-success">@ViewBag.Message</h5>
+
+}
+<h1>My Books</h1>
+
+@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+<form asp-controller="Books" asp-action="GetMyBooks" method="get">
+    <p>
+        <select asp-for="BookGenre" asp-items="Model.Genres">
+            <option value="">All</option>
+        </select>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+@{
+    var books = Model.Books;
+    var numBooks = books.Count();
+    var numColumns = 2;
+    var numRows = (int)Math.Ceiling((double)numBooks / numColumns);
+}
+<div class="container">
+    @for (int i = 0; i < numRows; i++)
+    {
+        <div class="row">
+            @for (int j = 0; j < numColumns; j++)
+            {
+                var index = i * numColumns + j;
+                if (index >= numBooks) { break; }
+                var item = books.ElementAt(index);
+                <div class="col-md-6">
+                    <div class="card mb-3" style="height: 300px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="@Url.Content(@item.FrontPage)" class="card-img" alt="Front Page Image" style="height: 300px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </h5>
+                                    <p class="card-text">
+                                        @Html.DisplayNameFor(model => model.Books[0].YearPublished): @Html.DisplayFor(modelItem => item.YearPublished)
+                                    </p>
+                                    <p class="card-text">
+                                        @Html.DisplayNameFor(model => model.Books[0].Author):
+                                        @if (item.AuthorId != null)
+                                        {
+                                            <a asp-controller="Authors" asp-action="Details" asp-route-id="@item.AuthorId"> @Html.DisplayFor(modelItem => item.Author.FullName)</a>
+                                        }
+                                    </p>
+                                    <p class="card-text">
+                                        Average Rating:
+                                        @if (ViewBag.AverageRatings.ContainsKey(item.Id))
+                                        {
+                                            <span>@ViewBag.AverageRatings[item.Id].ToString("0.00")</span>
+                                        }
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                            {
+                                                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                            }
+                                            |
+                                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                            @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                            {
+                                                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                            }
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

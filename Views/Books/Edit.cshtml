@@ -1,0 +1,83 @@
+﻿@model BookStore.Models.Book
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Book</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearPublished" class="control-label"></label>
+                <input asp-for="YearPublished" class="form-control" />
+                <span asp-validation-for="YearPublished" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumPages" class="control-label"></label>
+                <input asp-for="NumPages" class="form-control" />
+                <span asp-validation-for="NumPages" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Publisher" class="control-label"></label>
+                <input asp-for="Publisher" class="form-control" />
+                <span asp-validation-for="Publisher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FrontPage" class="control-label"></label>
+                <input type="file" asp-for="FrontPage" class="form-control" name="fileimg"/>
+                <span asp-validation-for="FrontPage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DownloadUrl" class="control-label"></label>
+                <input type="file" asp-for="DownloadUrl" class="form-control" name="filepdf"/>
+                <span asp-validation-for="DownloadUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AuthorId" class="control-label"></label>
+                <select asp-for="AuthorId" class="form-control" asp-items="ViewBag.AuthorId"></select>
+                <span asp-validation-for="AuthorId" class="text-danger"></span>
+                <div class="form-group row">
+                    <div class="form-group">
+                        <label asp-for="Genres" class="control-label"></label>
+                        <div class="checkbox-list">
+                            @foreach (var item in ViewData["Genres"] as List<SelectListItem>)
+                            {
+                                <label>
+                                    <input type="checkbox" name="selectedGenres" value="@item.Value" @if (item.Selected)
+                                    {
+                                        <text>checked="checked"</text>
+                                    } /> @item.Text
+                                </label>
+                            }
+                        </div>
+                    </div>
+                    <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

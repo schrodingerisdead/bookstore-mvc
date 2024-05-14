@@ -1,0 +1,108 @@
+﻿@model BookStore.Models.Author
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Author</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+    </dl>
+</div>
+<div>
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+    }|
+    <a asp-action="Index">Back to List</a>
+</div>
+<br />
+<h4>Author's Books</h4>
+<hr />
+
+@{
+    var books = Model.Books;
+    var numBooks = books.Count();
+    var numColumns = 2;
+    var numRows = (int)Math.Ceiling((double)numBooks / numColumns);
+}
+<div class="container">
+    @for (int i = 0; i < numRows; i++)
+    {
+        <div class="row">
+            @for (int j = 0; j < numColumns; j++)
+            {
+                var index = i * numColumns + j;
+                if (index >= numBooks) { break; }
+                var item = books.ElementAt(index);
+                <div class="col-md-6">
+                    <div class="card mb-3" style="height: 300px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="@Url.Content(@item.FrontPage)" class="card-img" alt="Front Page Image" style="height: 300px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </h5>
+                                    <p class="card-text">
+                                        @Html.DisplayNameFor(model => item.YearPublished): @Html.DisplayFor(modelItem => item.YearPublished)
+                                    </p>
+                                    <p class="card-text">
+                                        @Html.DisplayNameFor(model => item.Author):
+                                        @if (item.AuthorId != null)
+                                        {
+                                            <a asp-controller="Authors" asp-action="Details" asp-route-id="@item.AuthorId"> @Html.DisplayFor(modelItem => item.Author.FullName)</a>
+                                        }
+                                    </p>
+                                    <p class="card-text">
+                                        Average Rating:
+                                        @if (ViewBag.AverageRatings.ContainsKey(item.Id))
+                                        {
+                                            <span>@ViewBag.AverageRatings[item.Id].ToString("0.00")</span>
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
