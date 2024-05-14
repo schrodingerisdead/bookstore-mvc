@@ -12,7 +12,81 @@ html {
   position: relative;
   min-height: 100%;
 }
-
+/* Define font-family */
 body {
-  margin-bottom: 60px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* Set the default text color */
+body {
+    color: #541c34; /* Dark Purple */
+}
+
+/* Set the background color */
+body {
+    background-color: #f1f1f1; /* Light Gray */
+}
+
+/* Style for headings */
+h1, h2, h3 {
+    color: #e43c5c; /* Red color for headings */
+}
+
+/* Example of applying accent colors */
+.primary-content {
+    background-color: #9c556e; /* Muted Pink */
+    color: #ffffff; /* White text */
+}
+
+/* Style for form input fields */
+input[type="text"] {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ba777f; /* Soft Pink */
+}
+
+/* Style for submit button */
+input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #392648; /* Dark Purple */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Style for table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #ba777f; /* Soft Pink */
+    color: #000000; /* Black font color */
+}
+
+th {
+    background-color: #e43c5c; /* Red */
+}
+
+tr:nth-child(even) {
+    background-color: #fbd1a4; /* Light Orange */
+}
+
+/* Style for links */
+a {
+    color: #0074D9; /* Accent Color 1 */
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* Adjust margin */
+body {
+    margin-bottom: 60px;
 }
